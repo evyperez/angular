@@ -263,13 +263,32 @@ textarea {
 }
 
 .container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   max-width: my.$max-width;
   padding-right: my.$gutter;
   padding-left: my.$gutter;
   margin-right: auto;
   margin-left: auto;
+
+  display: grid;
+  /* stylelint-disable-next-line property-no-unknown */
+
+  grid-template-rows: auto;
+
+  width: 100%;
+
+  row-gap: my.$gutter * 0.5;
 }
 
 .full-width {
   @include my.full-width;
+}
+
+.rotate-x-180deg {
+  transform: rotateX(180deg);
+}
+
+.rotate-y-180deg {
+  transform: rotate(270deg);
 }

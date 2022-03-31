@@ -1,0 +1,96 @@
+@use 'sass:map';
+
+@use '../abstracts' as my;
+
+
+.product {
+  display: grid;
+  /* stylelint-disable-next-line property-no-unknown */
+
+  width: 100%;
+
+  row-gap: my.$gutter * 0.5;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  column-gap: my.$gutter * 0.5;
+
+
+  & img {
+    display: inline-block;
+    align-items: center;
+    width: auto;
+    height: auto;
+  }
+
+
+  & button span {
+    display: none;
+
+    margin-right: my.$gutter * 0.25;
+  }
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'desktop')}) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: #{map.get(my.$breakpoints, 'desktop') - 0.01}) {
+    & .benefits,
+    & .speedy-info p {
+      display: none;
+    }
+  }
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
+    button span {
+      display: flex;
+    }
+  }
+}
+
+.speedy-info {
+  display: grid;
+
+  width: 100%;
+
+  grid-template-rows: auto;
+
+  row-gap: my.$gutter * 0.5;
+
+  & img {
+    margin-right: my.$gutter * 0.25;
+    width: 14px;
+  }
+}
+
+.arrow-down {
+
+}
+
+.product-price {
+  text-align: right;
+}
+
+.product-price {
+  display: grid;
+  /* stylelint-disable-next-line property-no-unknown */
+
+  width: 100%;
+
+  row-gap: my.$gutter * 0.5;
+
+  grid-template-columns: 1fr auto;
+
+  column-gap: my.$gutter * 0.5;
+
+  @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
+    display: unset;
+
+    grid-template-columns: unset;
+
+    column-gap: my.$gutter * 0.5;
+
+    & .pricing {
+      margin-bottom: my.$gutter * 0.5;
+    }
+  }
+}

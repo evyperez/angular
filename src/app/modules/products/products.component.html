@@ -1,0 +1,83 @@
+<section class="products">
+  <div class="container">
+
+    <div class="alert alert--error" *ngIf="errorMessage">
+      <div class="alert__content">
+        <p>{{ errorMessage }}</p>
+      </div>
+    </div>
+
+    <div class="sort" *ngIf="products">
+      <label for="sortProducts">
+        Sort
+      </label>
+
+      <select id="sortProducts" [(ngModel)]="sortProducts" (change)="sort()">
+        <option [ngValue]="{fieldValue: 'price', orderBy: 'asc' }">
+          Price low to high
+        </option>
+
+        <option [ngValue]="{fieldValue: 'price', orderBy: 'desc' }">
+          Price high to low
+        </option>
+
+        <option [ngValue]="{fieldValue: 'downloadSpeed', orderBy: 'asc' }">
+          Download speed low to high
+        </option>
+        <option [ngValue]="{fieldValue: 'downloadSpeed', orderBy: 'desc' }">
+          Download speed high to low
+        </option>
+
+        <option [ngValue]="{fieldValue: 'uploadSpeed', orderBy: 'asc' }">
+          Upload speed low to high
+        </option>
+
+        <option [ngValue]="{fieldValue: 'uploadSpeed', orderBy: 'desc' }">
+          Upload speed high to low
+        </option>
+
+      </select>
+    </div>
+
+    <div class="product card" *ngFor="let product of products">
+      <div *ngIf="product.name">
+        <h2>{{ product.name }}</h2>
+      </div>
+      <div class="speedy-info">
+        <div *ngIf="product.downloadSpeed" title="download speed">
+          <p>Download</p>
+          <img src="/assets/images/arrow.svg" alt="arrow"> <small>{{product.downloadSpeed}}</small>
+        </div>
+        <div *ngIf="product.uploadSpeed" title="upload speed">
+          <p>Upload</p>
+          <img src="/assets/images/arrow.svg" alt="arrow" class="rotate-x-180deg "> <small>{{product.uploadSpeed}}</small>
+        </div>
+      </div>
+      <div class="benefits">
+        <ul>
+          <li *ngFor="let benefit of product.benefits">
+            {{ benefit }}
+          </li>
+        </ul>
+      </div>
+      <div class="product-price">
+        <div class="price-info" *ngIf="product.price">
+          <div class="pricing">
+            <span class="value">
+              <strong>
+                {{ product.price | currency: 'EUR' }}
+              </strong>
+            </span>
+          </div>
+        </div>
+        <button>
+          <span>To Tarif</span>
+          <img src="/assets/images/arrow.svg" class="rotate-y-180deg " alt="arrow">
+        </button>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>
