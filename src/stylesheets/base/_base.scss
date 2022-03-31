@@ -148,6 +148,7 @@ body {
   margin: 0;
 
   color: my.palette('black');
+  background: my.palette('purple', '5%');
 
   > * {
     flex-shrink: 0; /* 1 */

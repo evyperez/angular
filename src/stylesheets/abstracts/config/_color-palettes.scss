@@ -17,7 +17,7 @@
 ///
 $palette: () !default;
 
-$accent-color: hsl(330, 72%, 42%) !default;
+$accent-color: hsl(280, 83%, 50%) !default;
 
 ///
 /// @colors base
@@ -40,6 +40,28 @@ $neutral: (
   'black': rgb(0, 0, 0),
 );
 $palette: map.set($palette, 'neutral', $neutral);
+
+/// @colors background
+///
+$purple: (
+  '5%': rgb(252, 246, 254),
+  '10%': rgb(246, 232, 253),
+  '50%': rgb(187, 128, 219),
+  '100%': rgb(157, 24, 229),
+);
+$palette: map.set($palette, 'purple', $purple);
+
+$validation: (
+  'error': rgb(254, 246, 248),
+  'error-border': rgb(255, 183, 193),
+  'success': rgb(231, 249, 247),
+  'success-border': rgb(157, 233, 225),
+  'warning': rgb(255, 251, 233),
+  'warning-border': rgb(255, 236, 168),
+  'default': rgb(252, 246, 254),
+  'default-border': rgb(186, 218, 250),
+);
+$palette: map.set($palette, 'validation', $validation);
 
 
 ///
@@ -72,9 +94,9 @@ $palette: map.set($palette, 'anchor', $anchor);
 /// @colors button
 ///
 $button: (
-  'base': rgb(225, 225, 225),
-  'hover': rgb(229, 241, 251),
-  'focus': rgb(229, 241, 251),
+  'base': rgb(165, 225, 184),
+  'hover': rgb(143, 223, 163),
+  'focus': rgb(143, 223, 163),
   'slider': hsl(0, 0%, 40%),
   'submit': rgb(217, 83, 79),
   'reset': transparent,
