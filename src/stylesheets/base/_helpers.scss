@@ -263,22 +263,21 @@ textarea {
 }
 
 .container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  max-width: my.$max-width;
-  padding-right: my.$gutter;
-  padding-left: my.$gutter;
-  margin-right: auto;
-  margin-left: auto;
-
   display: grid;
   /* stylelint-disable-next-line property-no-unknown */
 
   grid-template-rows: auto;
 
-  width: 100%;
-
   row-gap: my.$gutter * 0.5;
+
+  width: 100%;
+  max-width: my.$max-width;
+  padding-top: 2rem;
+  padding-right: my.$gutter;
+  padding-bottom: 2rem;
+  padding-left: my.$gutter;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .full-width {

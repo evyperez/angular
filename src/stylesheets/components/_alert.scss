@@ -6,23 +6,21 @@
   padding: 0.5rem;
 
   background-color: my.palette('validation', 'default');
-
   border: 1px solid my.palette('validation', 'default-border');
   border-radius: 8px;
 
-  &:before {
-      display: inline-block;
+  &::before {
+    display: inline-block;
 
-      width: 24px;
-      height: 24px;
+    width: 24px;
+    height: 24px;
+    margin-right: to-rem(8px);
 
-      margin-right: to-rem(8px);
+    content: none;
 
-      background-position: center;
-      background-size: 24px auto;
-      background-repeat: no-repeat;
-
-      content: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px auto;
   }
 }
 
@@ -39,36 +37,33 @@
 
 .alert--success {
   background-color: my.palette('validation', 'success');
-
   border: 1px solid my.palette('validation', 'success-border');
 
-  &:before {
-      background: url('/assets/success.svg');
+  &::before {
+    content: '';
 
-      content: '';
+    background: url('/assets/success.svg');
   }
 }
 
 .alert--warning {
   background-color: my.palette('validation', 'warning');
-
   border: 1px solid my.palette('validation', 'warning-border');
 
-  &:before {
-      background: url('/assets/success.svg');
+  &::before {
+    content: '';
 
-      content: '';
+    background: url('/assets/success.svg');
   }
 }
 
 .alert--error {
   background-color: my.palette('validation', 'error');
-
   border: 1px solid my.palette('validation', 'error-border');
 
-  &:before {
-      background: url('/assets/error.svg');
+  &::before {
+    content: '';
 
-      content: '';
+    background: url('/assets/error.svg');
   }
 }

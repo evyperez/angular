@@ -2,29 +2,27 @@
 
 @use '../abstracts' as my;
 
-
 .product {
   display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  row-gap: my.$gutter * 0.5;
+  column-gap: my.$gutter * 0.5;
   /* stylelint-disable-next-line property-no-unknown */
 
   width: 100%;
 
-  row-gap: my.$gutter * 0.5;
-
-  grid-template-columns: 1fr 1fr 1fr;
-
-  column-gap: my.$gutter * 0.5;
-
-
-  & img {
+  img {
     display: inline-block;
+
     align-items: center;
+
     width: auto;
     height: auto;
   }
 
-
-  & button span {
+  button span {
     display: none;
 
     margin-right: my.$gutter * 0.25;
@@ -35,11 +33,12 @@
   }
 
   @media screen and (max-width: #{map.get(my.$breakpoints, 'desktop') - 0.01}) {
-    & .benefits,
-    & .speedy-info p {
+    .benefits,
+    .speedy-info p {
       display: none;
     }
   }
+
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
     button span {
       display: flex;
@@ -50,37 +49,33 @@
 .speedy-info {
   display: grid;
 
-  width: 100%;
-
   grid-template-rows: auto;
 
   row-gap: my.$gutter * 0.5;
 
-  & img {
-    margin-right: my.$gutter * 0.25;
+  width: 100%;
+
+  img {
     width: 14px;
+    margin-right: my.$gutter * 0.25;
   }
 }
 
 .arrow-down {
-
-}
-
-.product-price {
-  text-align: right;
 }
 
 .product-price {
   display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  row-gap: my.$gutter * 0.5;
+  column-gap: my.$gutter * 0.5;
   /* stylelint-disable-next-line property-no-unknown */
 
   width: 100%;
 
-  row-gap: my.$gutter * 0.5;
-
-  grid-template-columns: 1fr auto;
-
-  column-gap: my.$gutter * 0.5;
+  text-align: right;
 
   @media screen and (min-width: #{map.get(my.$breakpoints, 'tablet__portrait') - 0.01}) {
     display: unset;
@@ -89,7 +84,7 @@
 
     column-gap: my.$gutter * 0.5;
 
-    & .pricing {
+    .pricing {
       margin-bottom: my.$gutter * 0.5;
     }
   }

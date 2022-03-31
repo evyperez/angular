@@ -72,7 +72,6 @@ caption {
 
 tr {
   @media screen and (max-width: #{map.get(my.$breakpoints, 'toggle-table-layout') - 0.01}) {
-
     &:last-child {
       margin-bottom: 0;
     }
