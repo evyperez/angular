@@ -1,5 +1,11 @@
 # Angular
 
+This web application is an example of how to make a API request.
+
+You can sort the list by price, download or upload.
+
+You can see the aplication on [Netlify](https://lustrous-llama-7e016f.netlify.app/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
 ## Development server
